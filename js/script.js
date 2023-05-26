@@ -24,5 +24,16 @@ const kmPrice = 0.21;
 
 
 
+// Chiedo all'utente il numero di km che vuole percorrere e salvo la risposta
+
+const userTravelDistance = parseInt(prompt('Quanti km vuoi porcorrere?' , ' 20'));
+console.log(userTravelDistance);
+
+
+// Chiedo all'utente la sua età e salvo la risposta
+
+const userAge = parseInt(prompt('Qunati anni hai?' , '37'));
+console.log(userAge);
+
 
 
