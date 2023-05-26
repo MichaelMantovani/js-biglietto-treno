@@ -5,7 +5,12 @@ console.log('JS OK')
 /* OPERAZIONI PRELIMINARI */
 
 
-// TODO Recupero elemento dal DOM
+//  Recupero elemento dal DOM
+const userWelcome = document.getElementById('user-name');
+const userAgeRange = document.getElementById('user-age');
+const userTravelPrice = document.getElementById('travel-price');
+const userDiscountTravelPrice = document.getElementById('discount-travel-price');
+
 
 // Stabilisco tariffe di prezzo e sconti per età
 
@@ -23,10 +28,15 @@ const seniorAge= 65;
 const kmPrice = 0.21; 
 
 
+// Chiedo all'utent il suo nome e salvo la risposta
+const userName = prompt('Come ti chiami?' , 'Fabio');
+userWelcome.innerText = userName;
+console.log(userName);
+
 
 // Chiedo all'utente il numero di km che vuole percorrere e salvo la risposta
 
-const userTravelDistance = parseInt(prompt('Quanti km vuoi percorrere?' , ' 20'));
+const userTravelDistance = parseInt(prompt('Quanti km vuoi percorrere?' , ' 20')); 
 console.log(userTravelDistance);
 
 
@@ -35,26 +45,31 @@ console.log(userTravelDistance);
 const userAge = parseInt(prompt('Qunati anni hai?' , '37'));
 console.log(userAge);
 
-
 // Calcolo il costo del viaggio
 
 const travelPrice = userTravelDistance * 0.21;
+userTravelPrice.innerText = travelPrice
 console.log(travelPrice);
 
 
 // Applico gli sconti in base all'età
 
 let discountTravelPrice; 
+let ageRange = 'maggiorenne'
 
 if (userAge >= adultAge && userAge < seniorAge ){
   discountTravelPrice = travelPrice - ((travelPrice * discountAdult) / 100 )
 } else if (userAge >= seniorAge) {
+  ageRange = 'un over 65'
   discountTravelPrice = travelPrice - ((travelPrice * discountSenior) / 100)
 }
 
+userAgeRange.innerText = ageRange;
 
 
 // Stampo in console il risultato
-console.log (discountTravelPrice.toFixed(2))
+console.log (discountTravelPrice.toFixed(2));
+userDiscountTravelPrice.innerText = (discountTravelPrice.toFixed(2));
+
 
 
