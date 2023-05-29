@@ -42,7 +42,7 @@ console.log(userTravelDistance);
 
 // Chiedo all'utente la sua età e salvo la risposta
 
-const userAge = parseInt(prompt('Qunati anni hai?' , '37'));
+const userAge = parseInt(prompt('Qunati anni hai?' , '17'));
 console.log(userAge);
 
 // Calcolo il costo del viaggio
