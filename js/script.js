@@ -55,9 +55,9 @@ console.log(travelPrice);
 // Applico gli sconti in base all'età
 
 let discountTravelPrice; 
-let ageRange = 'maggiorenne'
+let ageRange = 'minorenne'
 
-if (userAge >= adultAge && userAge < seniorAge ){
+if (userAge < 18){
   discountTravelPrice = travelPrice - ((travelPrice * discountAdult) / 100 )
 } else if (userAge >= seniorAge) {
   ageRange = 'un over 65'
