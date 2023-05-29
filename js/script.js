@@ -15,7 +15,7 @@ const userDiscountTravelPrice = document.getElementById('discount-travel-price')
 // Stabilisco tariffe di prezzo e sconti per età
 
 // Percentuale di sconto per maggiorenni
-const discountAdult = 20;
+const discountUnderage = 20;
 
 // Percentuale di sconto per over65
 const discountSenior = 40;
@@ -58,10 +58,12 @@ let discountTravelPrice;
 let ageRange = 'minorenne'
 
 if (userAge < 18){
-  discountTravelPrice = travelPrice - ((travelPrice * discountAdult) / 100 )
+  discountTravelPrice = travelPrice - ((travelPrice * discountUnderage) / 100 )
 } else if (userAge >= seniorAge) {
   ageRange = 'un over 65'
   discountTravelPrice = travelPrice - ((travelPrice * discountSenior) / 100)
+} else {
+  ageRange = 'maggiorenne. Putroppo devi esere un over65 oppure un minorenne per accedere agli sconti'
 }
 
 userAgeRange.innerText = ageRange;
